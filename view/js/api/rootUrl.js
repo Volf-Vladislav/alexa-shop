@@ -1,0 +1,1 @@
+export const rootUrl = window.location.origin

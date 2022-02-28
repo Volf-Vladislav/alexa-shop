@@ -1,0 +1,33 @@
+.input-field .prefix {
+    color: #d2d2d2;
+}
+
+html {
+    background: #1F2023;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.mainForm {
+    padding: 10px;
+    margin: 10px;
+    background: #27292D !important;
+    border-radius: 0.2857rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    width: 500px;
+    border: 1px solid #222020;
+}
+
+input {
+    color: #d2d2d2 !important;
+}
+
+.btn {
+    background-color: #1f2023 !important;
+    color: #d2d2d2;
+}

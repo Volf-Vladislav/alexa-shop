@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/black-dashboard.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <title>Администратор</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sidebar" style="margin-top: 40px">
+      <div class="sidebar-wrapper" style="background: #27292D">
+        <div class="logo">
+          <a class="simple-text logo-normal center" style="text-align: center;">Space7 Consulting</a>
+        </div>
+        <ul class="nav">
+          <li class="active ">
+            <a id="analButton" href="/dashboard">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Аналитика</p>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="tim-icons icon-pin"></i>
+              <p>Заметки</p>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="tim-icons icon-bell-55"></i>
+              <p>Уведомления</p>
+            </a>
+          </li>
+          <li>
+            <a href="/profile">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Профиль</p>
+            </a>
+          </li>
+          <li>
+            <a id="productCreate" href="/createproduct">
+              <i class="tim-icons icon-puzzle-10"></i>
+              <p>Публикация продукта</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel" style="background: #1F2023;">
+
+      <div class="content" style="background: #1F2023; padding-top: 40px">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-chart" style="background: #27292D">
+              <div class="card-header ">
+                <div class="row">
+                  <div class="col-sm-6 text-left">
+                    <h5 class="card-category">Анализ активности пользователей</h5>
+                    <h2 class="card-title">2021-2022</h2>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                        <input type="radio" name="options" checked>
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Пользователей</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-single-02"></i>
+                        </span>
+                      </label>
+                      <label class="btn btn-sm btn-primary btn-simple" id="1">
+                        <input type="radio" class="d-none d-sm-none" name="options">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Покупок</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-gift-2"></i>
+                        </span>
+                      </label>
+                      <label class="btn btn-sm btn-primary btn-simple" id="2">
+                        <input type="radio" class="d-none" name="options">
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Отзывов</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-tap-02"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="chartBig1"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card card-chart" style="background: #27292D">
+              <div class="card-header">
+                <h5 class="card-category">Оборот компании</h5>
+                <h3 class="card-title">763,215€</h3>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="chartLinePurple"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card card-chart" style="background: #27292D">
+              <div class="card-header">
+                <h5 class="card-category">Оборот за рубежом</h5>
+                <h3 class="card-title"> 102,500€</h3>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="CountryChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card card-chart" style="background: #27292D">
+              <div class="card-header">
+                <h5 class="card-category">Оказано услуг</h5>
+                <h3 class="card-title"><i class="tim-icons icon-chart-pie-36 text-success"></i> 12,100K</h3>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="chartLineGreen"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script src="../assets/dashboard/script.js"></script>
+  <script>
+    $(document).ready(function () {
+      demo.initDashboardPageCharts()
+    })
+  </script>
+</body>
+
+</html>

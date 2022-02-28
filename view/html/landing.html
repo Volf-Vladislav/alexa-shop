@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/landing.css">
+    <title>Главная</title>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="nav-extended">
+            <div class="nav-wrapper navbarbalack">
+                <a href="#" class="brand-logo" style="font-size: 20px;">Space7 Consulting</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="btn checkAuth">Авторизация</a></li>
+                </ul>
+            </div>
+            <div class="nav-content">
+                <ul class="tabs tabs-transparent" style="background: #212225;">
+                    <li class="tab"><a href="#">Лидеры Продаж</a></li>
+                    <li class="tab"><a class="active" href="#">Акции</a></li>
+                    <li class="tab disabled"><a href="#t">Скидки</a></li>
+                    <li class="tab"><a href="#">Категории</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+
+        <div id="test1" class="col s12">Test 1</div>
+        <div id="test2" class="col s12">Test 2</div>
+        <div id="test3" class="col s12">Test 3</div>
+        <div id="test4" class="col s12">Test 4</div>
+    </div>
+    <div class="mainContent">
+
+    </div>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        const checkAuth = document.querySelector('.checkAuth')
+        if(getCookie('token')) {
+            checkAuth.innerText = 'Личный Кабинет'
+            checkAuth.onclick = () => {
+                location.href = '/dashboard'
+            }
+        }
+        else {
+            checkAuth.innerText = 'Войти'
+            checkAuth.onclick = () => {
+                location.href = '/auth'
+            }
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    </script>
+
+    <script type="module" src="../js/product.js"></script>
+</body>
+
+</html>

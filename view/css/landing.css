@@ -1,0 +1,47 @@
+* {
+    border-color: #ffffff59 !important;
+}
+
+html,
+body {
+    background: #1f2023;
+}
+
+.btn {
+    background-color: #1f2023 !important;
+    color: #d2d2d2;
+}
+
+.mainContent {
+    padding: 20px;
+    margin-top: 55px;
+}
+
+.card {
+    background: #27292d !important;
+}
+
+span {
+    text-transform: uppercase !important;
+}
+
+a {
+    color: white !important;
+}
+.navbarbalack {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    background: #27292d !important;
+}
+
+.card-title {
+    color: rgba(255, 255, 255, 0.68) !important;
+}
+
+.card-content p {
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.card-action a {
+    color: rgba(255, 255, 255, 0.81) !important;
+}
